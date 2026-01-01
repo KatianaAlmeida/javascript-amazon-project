@@ -1,3 +1,7 @@
+/*
+
+We are using the products in the products.js file
+
 const products = [
   {
     image: 'images/products/athletic-cotton-socks-6-pairs.jpg',
@@ -28,6 +32,7 @@ const products = [
   }
 
 ]; // array of objects
+*/
 
 let productsHTML = '';
 
