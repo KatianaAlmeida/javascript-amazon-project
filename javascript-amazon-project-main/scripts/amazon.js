@@ -34,6 +34,8 @@ const products = [
 ]; // array of objects
 */
 
+import {cart} from '../data/cart.js'
+
 let productsHTML = '';
 
 products.forEach((product) => {
