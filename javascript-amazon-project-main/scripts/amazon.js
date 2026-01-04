@@ -108,8 +108,9 @@ document.querySelectorAll('.js-add-to-cart-button').forEach((buttonElement, inde
     //console.log(buttonElement.dataset); // returns all the data attributes
     const productId = buttonElement.dataset.productId
     const productName = buttonElement.dataset.productName
+    //console.log(productName); 
 
-    addToCart(productId, productName);
+    addToCart(productId);
     updateCartQuantity ();
 
   })
