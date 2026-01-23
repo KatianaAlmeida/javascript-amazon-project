@@ -30,7 +30,8 @@ export function renderOrderSummary() {
     const dateString = deliveryDate.format('dddd, MMMM, D');
 
     cartSummaryHTML += `         
-    <div class="cart-item-container js-cart-item-container-${matchingProduct.id}">
+    <div class="cart-item-container js-cart-item-container
+      js-cart-item-container-${matchingProduct.id}">
       <div class="delivery-date">
         Delivery date: ${dateString}
       </div>
@@ -46,7 +47,7 @@ export function renderOrderSummary() {
           <div class="product-price">
             ${formatCurrency(matchingProduct.priceCents)}
           </div>
-          <div class="product-quantity">
+          <div class="product-quantity js-product-quantity-${matchingProduct.id}">
             <span>
               Quantity: <span class="quantity-label">${cartItem.quantity}</span>
             </span>
@@ -70,6 +71,8 @@ export function renderOrderSummary() {
     </div>
     `;
   });
+
+  console.log(document.querySelectorAll(`.product-quantity.js-product-quantity-e43638ce-6aa0-4b85-b27f-e1d07eb678c6`).innerHTML)
 
   function deliveryOptionsHTML(matchingProduct, cartItem){
     let deliveryOptionHTML = '';
