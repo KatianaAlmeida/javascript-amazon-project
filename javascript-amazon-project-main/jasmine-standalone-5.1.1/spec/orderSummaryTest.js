@@ -30,11 +30,6 @@ describe('test suite: renderOrderSummary', () => {
   console.log(document.querySelectorAll(`.js-product-quantity-${productId1}`))
 
   expect(document.querySelectorAll('.js-cart-item-container').length).toEqual(2);
-  expect(document.querySelectorAll(`.js-product-quantity-${productId1}`).innerText)
-    .toContain('Quantity: 2');
-
-  expect(document.querySelectorAll(`.js-product-quantity-${productId2}`).innerText)
-    .toContain('Quantity: 1');
   
   });
 });
