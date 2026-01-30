@@ -1,14 +1,14 @@
 class Cart {
-  cartItems;
-  localStorageKey = undefined; // same thing as above
+  cartItems; // same thing as below - it's also undefined
+  #localStorageKey = undefined; // private property
 
   constructor(localStorageKey){
-    this.localStorageKey = localStorageKey; // assigning values to the properties
-    this.loadFromStorage();
+    this.#localStorageKey = localStorageKey; // assigning values to the properties
+    this.#loadFromStorage();
   }
 
-  loadFromStorage() {
-    this.cartItems = JSON.parse(localStorage.getItem(this.localStorageKey));
+  #loadFromStorage() {
+    this.cartItems = JSON.parse(localStorage.getItem(this.#localStorageKey));
 
     if(!this.cartItems){
       this.cartItems = [{
@@ -25,7 +25,7 @@ class Cart {
   }
 
   saveToStorage() {
-    localStorage.setItem(this.localStorageKey, JSON.stringify(this.cartItems))
+    localStorage.setItem(this.#localStorageKey, JSON.stringify(this.cartItems))
   }
 
     addToCart(productId) {
